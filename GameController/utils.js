@@ -89,14 +89,7 @@ const handleActionPlayer = (getPositionCallback = () => {}) => {
 }
 
 const handleActionAi = (getPositionCallback = () => {}) => {
-  // const promptMessageCallback = () =>
-  //   console.log(cliColor.green("ai firing"));
-  // const errorMessageCallback = (error) => {
-  //   console.log();
-  //   console.log(cliColor.green('ai must choose a valid target'));
-  //   console.log(cliColor.green(error.message))
-  // }
-  return handleAction(getPositionCallback, promptMessageCallback, errorMessageCallback)
+  return handleAction(getPositionCallback);
 }
 
 // !: local testing use only

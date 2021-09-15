@@ -103,3 +103,10 @@ dist
 # TernJS port file
 .tern-port
 testresult.xml
+
+battleship-nodejs-linux
+battleship-nodejs-macos.zip
+battleship-nodejs-win.exe
+Retro Battleship
+battleship-nodejs-win.exe
+battleship-nodejs-macos

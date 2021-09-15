@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Battleship with Node JS",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "mocha": "mocha ./**/*Tests.js",
     "cucumber": "./node_modules/.bin/cucumber-js ./GameController_ATDD",
