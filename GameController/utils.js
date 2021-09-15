@@ -89,7 +89,6 @@ const handleActionPlayer = (getPositionCallback = () => {}) => {
 }
 
 const handleActionAi = (getPositionCallback = () => {}) => {
-  const
   // const promptMessageCallback = () =>
   //   console.log(cliColor.green("ai firing"));
   // const errorMessageCallback = (error) => {
