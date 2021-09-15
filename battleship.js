@@ -53,14 +53,16 @@ class Battleship {
       console.log(cliColor.magentaBright("My Board"));
       this.myBoard.render();
 
-      // if (isSunk) {
-      //     this.enemyFleet = this.enemyFleet.filter(ship => ship.name !== isSunk.name);
-      //     console.log(cliColor.redBright(`You sunk my ${isSunk.name}!`));
-      //     const remainingShips = this.enemyFleet.reduce((a, b) => `${a && a + ', '}${b.name}`, '');
-      //     console.log();
-      //     console.log(cliColor.magenta(`${remainingShips} remaining.`));
-      // }
-
+      if (isSunk) {
+          this.enemyFleet = this.enemyFleet.filter(ship => ship.name !== isSunk.name);
+          console.log(cliColor.redBright(`You sunk my ${isSunk.name}!`));
+          const remainingShips = this.enemyFleet.reduce((a, b) => `${a && a + ', '}${b.name}`, '');
+          if (!remainingShips) {
+            displayGraphic.winnerShip(cliColor.magenta);
+            process.exit()
+          }
+          console.log(cliColor.magenta(`${remainingShips} remaining.`));
+      }
 
       var computerPos = this.GetRandomPosition();
       var {isHit, isSunk} = gameController.CheckIsHit(this.myFleet, computerPos);
@@ -74,13 +76,16 @@ class Battleship {
         // displayGraphic.hit(cliColor.red);
       }
 
-      // if (isSunk) {
-      //     this.myFleet = this.myFleet.filter(ship => ship.name !== isSunk.name);
-      //     console.log(cliColor.redBright(`Your ${isSunk.name} has been sunk!`));
-      //     const remainingShips = this.myFleet.reduce((a, b) => `${a && a + ', '}${b.name}`, '');
-      //     console.log();
-      //     console.log(cliColor.yellow(`${remainingShips} remaining.`));
-      // }
+      if (isSunk) {
+          this.myFleet = this.myFleet.filter(ship => ship.name !== isSunk.name);
+          console.log(cliColor.redBright(`Your ${isSunk.name} has been sunk!`));
+          const remainingShips = this.myFleet.reduce((a, b) => `${a && a + ', '}${b.name}`, '');
+          if (!remainingShips) {
+            displayGraphic.loserShip(cliColor.magenta);
+            process.exit()
+          }
+          console.log(cliColor.yellow(`${remainingShips} remaining.`));
+      }
     }
     while (true);
   }
