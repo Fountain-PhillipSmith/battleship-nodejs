@@ -107,22 +107,39 @@ class Battleship {
   }
 
   InitializeMyFleet() {
-    const { initializeFleet } = utils;
-    this.myFleet = initializeFleet(gameController.InitializeShips());
-    // this.myFleet = gameController.InitializeShips();
+    //const { initializeFleet } = utils;
+    //this.myFleet = initializeFleet(gameController.InitializeShips());
+     this.myFleet = gameController.InitializeShips();
+     this.myBoard =  new GameBoardState()
 
-    // console.log("Please position your fleet (Game board size is from A to H and 1 to 8) :");
+     console.log("Please position your fleet (Game board size is from A to H and 1 to 8) :");
 
-    // const { setPlayerPosition } = utils;
-    // this.myFleet.forEach(function (ship) {
-    //   console.log();
-    //   console.log(`Please enter the positions for the ${ship.name} (size: ${ship.size})`);
-    //   for (var i = 1; i < ship.size + 1; i++) {
-    //     setPlayerPosition(i, ship);
-    //   }
-    // })
+     const { setPlayerPosition } = utils;
 
-    this.myBoard = new GameBoardState(this.myFleet);
+     var input = '';
+     console.log()
+     this.myFleet.forEach((ship)  => {
+       console.log();
+       var ends = [];
+       while (ends.length === 0) {
+         console.log(`Please enter the starting position for the ${ship.name} (size: ${ship.size})`);
+         const start = readline.question();
+        // console.log(start);
+         ends = this.myBoard.shipsEndingCoordinate(start, ship.size);
+         if(ends.length > 0){
+           console.log(`Choose the ending position from: ${ends}`)
+
+           while(!ends.includes(input)) {
+             input = readline.question()
+             if(ends.includes(input)) {
+               ship.addPositions(start,input)
+               this.myBoard.addShip(ship)
+
+             }
+           }
+         }
+       }
+     })
     this.myTrackerBoard = new GameBoardTracker();
   }
 
