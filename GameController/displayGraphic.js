@@ -40,6 +40,38 @@ const hit = (cliColorCallback = cliColor.white) => {
   console.log(cliColorCallback("                   \\  \\   /  /"));
 }
 
+const winnerShip = (cliColorCallback = cliColor.white) => {
+  console.log(cliColorCallback("                                     |__"));
+  console.log(cliColorCallback("                                     |\\/"));
+  console.log(cliColorCallback("                                     ---"));
+  console.log(cliColorCallback("                                     / | ["));
+  console.log(cliColorCallback("                              !      | |||"));
+  console.log(cliColorCallback("                            _/|     _/|-++'"));
+  console.log(cliColorCallback("                        +  +--|    |--|--|_ |-"));
+  console.log(cliColorCallback("                     { /|__|  |/\\__|  |--- |||__/"));
+  console.log(cliColorCallback("                    +---------------___[}-_===_.'____                 /\\"));
+  console.log(cliColorCallback("                ____`-' ||___-{]_| _[}-  |     |_[___\\==--            \\/   _"));
+  console.log(cliColorCallback(" __..._____--==/___]_|__|_____________________________[___\\==--____,------' .7"));
+  console.log(cliColorCallback("|                        You're a WINNER!                                BB-61/"));
+  console.log(cliColorCallback(" \\_________________________________________________________________________|"));
+}
+
+const loserShip = (cliColorCallback = cliColor.white) => {
+  console.log(cliColorCallback("                                     |__"));
+  console.log(cliColorCallback("                                     |\\/"));
+  console.log(cliColorCallback("                                     ---"));
+  console.log(cliColorCallback("                                     / | ["));
+  console.log(cliColorCallback("                              !      | |||"));
+  console.log(cliColorCallback("                            _/|     _/|-++'"));
+  console.log(cliColorCallback("                        +  +--|    |--|--|_ |-"));
+  console.log(cliColorCallback("                     { /|__|  |/\\__|  |--- |||__/"));
+  console.log(cliColorCallback("                    +---------------___[}-_===_.'____                 /\\"));
+  console.log(cliColorCallback("                ____`-' ||___-{]_| _[}-  |     |_[___\\==--            \\/   _"));
+  console.log(cliColorCallback(" __..._____--==/___]_|__|_____________________________[___\\==--____,------' .7"));
+  console.log(cliColorCallback("|                        What a LOSER!                                   BB-61/"));
+  console.log(cliColorCallback(" \\_________________________________________________________________________|"));
+}
+
 module.exports = {
   battleship,
   cannon,
